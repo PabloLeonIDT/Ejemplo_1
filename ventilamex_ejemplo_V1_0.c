@@ -15,6 +15,12 @@
 #include <crc_8.c>
 #ZERO_RAM  
 
+float LecturaVoltajePresion, LecturaPresion;
+float LecturaVoltajeFlujo;
+int16 LecturaFlujo;
+
+void PRUEBA_MALA_LECTURA(void);
+
 void main(){
    can_init(); 
    setup_adc_ports(AN0_TO_AN1); 
@@ -23,24 +29,23 @@ void main(){
    enable_interrupts(INT_RDA);
    enable_interrupts(GLOBAL);
    
-   while(TRUE){
-       
-      float LecturaVoltajePresion, LecturaPresion;
-      float LecturaVoltajeFlujo;
+   while(TRUE){      
       
-      int16 LecturaFlujo;
-      
-      set_adc_channel(0);
-      delay_us(50);
-      LecturaVoltajeFlujo = read_adc();
-      LecturaFlujo = ((5.0*LecturaVoltajeFlujo/1024.0)*1.556)+0.5;
-      
-      set_adc_channel(1);
-      delay_us(50);
-      LecturaVoltajePresion = read_adc();
-      LecturaPresion = ((5.0*LecturaVoltajePresion/1024.0));            
+      PRUEBA_MALA_LECTURA();             
       
       printf("%3.2f, %3.2Lu", LecturaPresion, LecturaFlujo);
    }
 
+}
+
+void PRUEBA_MALA_LECTURA(void){
+   set_adc_channel(0);
+   delay_us(50);
+   LecturaVoltajeFlujo = read_adc();
+   LecturaFlujo = ((5.0*LecturaVoltajeFlujo/1024.0)*1.556)+0.5;            
+   
+   set_adc_channel(1);
+   delay_us(50);
+   LecturaVoltajePresion = read_adc();
+   LecturaPresion = ((5.0*LecturaVoltajePresion/1024.0));   
 }
