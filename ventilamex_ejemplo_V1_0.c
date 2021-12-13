@@ -26,19 +26,21 @@ void main(){
    while(TRUE){
        
       float LecturaVoltajePresion, LecturaPresion;
-      float LecturaVoltajeFlujo, LecturaFlujo;
+      float LecturaVoltajeFlujo;
+      
+      int16 LecturaFlujo;
       
       set_adc_channel(0);
       delay_us(50);
       LecturaVoltajeFlujo = read_adc();
-      LecturaFlujo = ((5.0*LecturaVoltajeFlujo/1024.0));
+      LecturaFlujo = ((5.0*LecturaVoltajeFlujo/1024.0)*1.556)+0.5;
       
       set_adc_channel(1);
       delay_us(50);
       LecturaVoltajePresion = read_adc();
       LecturaPresion = ((5.0*LecturaVoltajePresion/1024.0));            
       
-      printf("%3.2f, %3.2f", LecturaPresion, LecturaFlujo);
+      printf("%3.2f, %3.2Lu", LecturaPresion, LecturaFlujo);
    }
 
 }
