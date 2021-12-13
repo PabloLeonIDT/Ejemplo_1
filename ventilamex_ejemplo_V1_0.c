@@ -24,15 +24,21 @@ void main(){
    enable_interrupts(GLOBAL);
    
    while(TRUE){
-   
+       
       float LecturaVoltajePresion, LecturaPresion;
+      float LecturaVoltajeFlujo, LecturaFlujo;
+      
+      set_adc_channel(0);
+      delay_us(50);
+      LecturaVoltajeFlujo = read_adc();
+      LecturaFlujo = ((5.0*LecturaVoltajeFlujo/1024.0));
       
       set_adc_channel(1);
       delay_us(50);
       LecturaVoltajePresion = read_adc();
-      LecturaPresion = ((5.0*LecturaVoltajePresion/1024.0));
+      LecturaPresion = ((5.0*LecturaVoltajePresion/1024.0));            
       
-      printf("%3.2f", LecturaPresion);
+      printf("%3.2f, %3.2f", LecturaPresion, LecturaFlujo);
    }
 
 }
