@@ -16,7 +16,7 @@ void main(){
       PRUEBA_MALA_LECTURA();             
       
       if(CondicionErrorSensor1==1 || CondicionErrorSensor2==1){
-         printf("Error en lectura. Verifique Sensor");
+         printf("Error en lectura. Verifique Sensor prueba");
       }
       else{            
          printf("%3.2f, %3.2Lu", LecturaPresion, LecturaFlujo);
