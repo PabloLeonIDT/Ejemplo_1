@@ -15,9 +15,11 @@
 #include <crc_8.c>
 #ZERO_RAM  
 
-float LecturaVoltajePresion, LecturaPresion;
-float LecturaVoltajeFlujo;
+/* Definir variables */
+float LecturaVoltajePresion, LecturaPresion, LecturaVoltajeFlujo;
 int16 LecturaFlujo;
+int CondicionErrorSensor1, CondicionErrorSensor2;
 
+/* Definir funciones */
 void PRUEBA_MALA_LECTURA(void);
 void RUTINA_PROBAR_SENSORES(void);
