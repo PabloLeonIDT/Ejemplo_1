@@ -1,6 +1,6 @@
 #include "header_principal.h"
 #include "LECTURA_DATOS.c"
-
+/* Es una prueba de commit (1) */
 void main(){
    can_init(); 
    setup_adc_ports(AN0_TO_AN1); 
@@ -19,7 +19,7 @@ void main(){
          printf("Error en lectura. Verifique Sensor prueba");
       }
       else{            
-         printf("%3.2f, %3.2Lu Prueba 2", LecturaPresion, LecturaFlujo);
+         printf("%3.2f, %3.2Lu Prueba 2", LecturaPresion, LecturaFlujo );
       }
    }
 

@@ -4,7 +4,7 @@ void RUTINA_PROBAR_SENSORES(void){
    float PruebaFlujo, PruebaPresion;
    
    CondicionErrorSensor1=0;
-   CondicionErrorSensor2=0;
+   CondicionErrorSensor2=10;
    
    set_adc_channel(0);
    delay_us(50);
