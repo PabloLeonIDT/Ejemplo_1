@@ -26,6 +26,7 @@ void RUTINA_PROBAR_SENSORES(void){
 }
 
 void PRUEBA_MALA_LECTURA(void){
+   /* PRUEBA 2*/
    set_adc_channel(0);
    delay_us(50);
    LecturaVoltajeFlujo = read_adc();

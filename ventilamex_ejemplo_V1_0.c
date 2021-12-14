@@ -19,7 +19,7 @@ void main(){
          printf("Error en lectura. Verifique Sensor prueba");
       }
       else{            
-         printf("%3.2f, %3.2Lu", LecturaPresion, LecturaFlujo);
+         printf("%3.2f, %3.2Lu Prueba 2", LecturaPresion, LecturaFlujo);
       }
    }
 
