@@ -1,6 +1,6 @@
 #include "header_principal.h"
 #include "LECTURA_DATOS.c"
-/* Es una prueba de commit (1) */
+/* Es una prueba de commit (2) */
 void main(){
    can_init(); 
    setup_adc_ports(AN0_TO_AN1); 
